@@ -1,17 +1,8 @@
-const express = require('express');
+require('dotenv').config()
+const app = require('./src/app')
 
-const aiRoutes = require('./routes/ai.routes');
 
-const cors = require('cors');
 
-const app = require('express')
-
-app.use(cors());
-
-app.use(express.json());
-
-app.get('/',(req,res)=>{
-    res.send('hello world')
+app.listen(3000, () => {
+    console.log('Server is running on http://localhost:3000')
 })
-
-module.exports = app;
