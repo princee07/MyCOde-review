@@ -24,7 +24,7 @@ function App() {
 
     try {
       console.log("Code being sent:", code, "Language:", language);
-      const response = await axios.post('http://localhost:3000/ai/get-review', { code, language });
+      const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}ai/get-review`, { code, language });
       setReview(response.data);
     } catch (error) {
       console.error("Error from backend:", error.response?.data || error.message);
