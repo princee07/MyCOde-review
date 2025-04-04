@@ -1,10 +1,12 @@
 const express = require('express');
 const aiRoutes = require('./routes/ai.routes')
-const cors = require('cors')
+
 
 const app = express()
-
-app.use(cors())
+const cors = require('cors')
+app.use(cors({
+    origin: ['https://reviewcode.netlify.app', 'https://my-c-ode-review.vercel.app'],
+  }));
 
 
 app.use(express.json())

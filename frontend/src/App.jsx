@@ -24,7 +24,8 @@ function App() {
 
     try {
       console.log("Code being sent:", code, "Language:", language);
-      const response = await axios.post('http://localhost:3000/ai/get-review', { code, language });
+      const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}ai/get-review`, { code, language });
+
 
       setReview(response.data);
     } catch (error) {
