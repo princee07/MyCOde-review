@@ -4,12 +4,7 @@ const cors = require('cors')
 
 const app = express()
 
-app.use(cors({
-    origin: ['http://localhost:3000', 
-        'https://allcode-review.netlify.app',
-         'https://my-c-ode-review.vercel.app'
-    ],
-}))
+app.use(cors())
 
 
 app.use(express.json())

@@ -24,7 +24,7 @@ function App() {
 
     try {
       console.log("Code being sent:", code, "Language:", language);
-      const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}ai/get-review`, { code, language });
+      const response = await axios.post('http://localhost:3000/ai/get-review', { code, language });
 
       setReview(response.data);
     } catch (error) {
@@ -76,6 +76,7 @@ function App() {
 
       {/* Right Panel */}
       <div className="flex-1  bg-gray-800 rounded-lg p-4 overflow-auto">
+      <h2 className="text-2xl  font-semibold mb-4">Code Review:</h2>
         <Markdown rehypePlugins={[rehypeHighlight]}>{review}</Markdown>
       </div>
     </main>
